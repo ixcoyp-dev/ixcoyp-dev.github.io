@@ -1,0 +1,150 @@
+/*
+  Estilos base para el mapa y el popup.
+  El diseño es responsivo y listo para incrustar en WordPress.
+*/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: #1b1b1b;
+  background-image:url(fondo.png);  
+  background-size: cover;
+}
+
+#map {
+  width: 70vmin; /* ~70% del lado menor de la ventana */
+  height: 70vmin; /* cuadrado */
+  margin: 0; /* el centrado lo maneja el contenedor flex */
+}
+.map-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centra verticalmente */
+  gap: 12px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+.page-title {
+  margin: 0;
+  font-size: 60px;
+  font-weight: 800;
+  color: #272556;
+  text-align: center;
+}
+.toolbar {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px;
+}
+
+.toolbar input[type="search"] {
+  width: 100%;
+  max-width: 520px;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #fbf2f2;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.toolbar input[type="search"]:focus {
+  border-color: #6bac2e;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+.info-bar {
+  width: 70vmin;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.85);
+  color: #272556;
+  text-align: center;
+}
+
+/* Ajustes de control Leaflet para mejor visibilidad */
+.leaflet-control-attribution {
+  font-size: 12px;
+}
+
+/* Estilo del contenido del popup */
+.popup-content {
+  max-width: 320px;
+}
+
+.popup-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #272556;
+;
+}
+
+.popup-table {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 6px 12px;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.popup-table .label {
+  font-weight: 600;
+  color: #272556;
+}
+
+.popup-table .value {
+  color: #272556;
+}
+
+.route-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background: #6bac2e; /* fondo del botón */
+  color: #fbf2f2 !important; /* texto del botón */
+  text-decoration: none !important;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.route-btn:hover, .route-btn:focus {
+  background: #272556;
+  color: #fbf2f2 !important;
+}
+
+/* Forzar color en todos los estados y dentro de popups Leaflet */
+.leaflet-popup-content .route-btn,
+.route-btn:link,
+.route-btn:visited,
+.route-btn:active {
+  color: #fbf2f2 !important;
+  text-decoration: none !important;
+}
+
+/* Responsividad: en móviles el popup usa una sola columna para mayor legibilidad */
+@media (max-width: 420px) {
+  .popup-table {
+    grid-template-columns: 1fr;
+  }
+
+  .popup-table .label {
+    color: #fbf2f2;
+  }
+}
+
+.map-title {
+  margin: 0;
+  padding: 12px 16px;
+  font-size: 60px;
+  font-weight: 700;
+  color: #272556;
+  text-align: center;
+}
+
+

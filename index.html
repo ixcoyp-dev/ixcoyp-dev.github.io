@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mapa Interactivo | Google Sheets + Leaflet</title>
+
+    <!-- Hoja de estilos de Leaflet (CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="map-wrapper">
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="Buscar por nombre o dirección" aria-label="Buscar lugar" />
+                <h1 class="map-title">UbicArte</h1>
+      </div>
+      <!-- Contenedor del mapa -->
+      <div id="map" role="region" aria-label="mapa"></div>
+    </div>
+
+    <!-- Librería Leaflet (CDN) -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <!-- Lógica de la app -->
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+
